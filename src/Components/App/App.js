@@ -3,11 +3,12 @@ import Header from '../Header/header.js';
 import './App.css';
 import React, { useState, useEffect } from "react";
 import DisplayCharacter from '../Character/character.js';
+import Button from '../Button/button.js';
 
 
 function App() {
   const [character, setCharacter] = useState([]);
-  const API_URL = `https://rickandmortyapi.com/api/character/1`;
+  const API_URL = `https://rickandmortyapi.com/api/character/${character}`;
   
   useEffect(()=>{
     const loadData = async() =>{
@@ -24,7 +25,10 @@ function App() {
     loadData();
   },[]);
 
-    
+    function handleClick(character) {
+      character = (Math.floor(Math.random() * 826) + 1)
+      console.log(character)
+    }
 
   return (
     <div>
@@ -32,6 +36,7 @@ function App() {
       <Title/>
     </div>
       <DisplayCharacter character={character}/>
+      <button onClick={handleClick}>Get a random character</button>
     </div>
   );
 }
