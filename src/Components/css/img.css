@@ -1,0 +1,23 @@
+
+.img-container{
+    position: relative;
+    width: 70%;
+    margin: 10px auto;
+    display:flex;
+    flex-direction: row; 
+    align-items: flex-start;
+}
+.box img{
+    margin-right: 0px;
+    display:block;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+}
+.box:hover{
+    transform: scale(1.2);
+}
+.title{
+    text-align: center;
+}
+

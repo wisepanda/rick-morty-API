@@ -1,11 +1,9 @@
-// import React from 'react'
+import React from 'react'
 
-// const Button = () => {
-//     return (
-//         <div>
-//             <button>Get a random character</button>
-//         </div>
-//     )
-// }
-
-// export default Button
+export default function Button() {
+    return (
+        <div className='button-container'>
+            <button className='button'>"Wubbalubbadubdub!"</button>
+        </div>
+    )
+}
