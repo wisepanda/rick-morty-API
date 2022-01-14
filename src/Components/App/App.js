@@ -2,15 +2,17 @@ import Title from '../Title/title.js';
 import Header from '../Header/header.js';
 import './App.css';
 import React, { useState, useEffect } from "react";
-import express  from 'express';
-import cors from "cors";
+
+Access-Control-Allow-origin:`https://localhost:3000`;
+// import express  from 'express';
+// import cors from "cors";
 
 
-app.use(
-  cors({
-    origin: `http://localhost:3000`,
-  })
-);
+// app.use(
+//   cors({
+//     origin: `http://localhost:3000`,
+//   })
+// );
 
 
 
