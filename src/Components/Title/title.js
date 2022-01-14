@@ -3,7 +3,7 @@ import React from 'react'
 const Title = () => {
     return (
         <div>
-           <h1>The Heroes of room 40</h1> 
+           <h1>Rick and Morty Characters</h1> 
            
         </div>
     )
