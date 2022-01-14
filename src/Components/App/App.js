@@ -7,9 +7,10 @@ import Button from '../Button/button.js';
 
 
 function App() {
-  const [character, setCharacter] = useState({handleClick});
+  const [character, setCharacter] = useState({});
+  const [id, setId] = useState(1)
   
-  const API_URL = `https://rickandmortyapi.com/api/character/2`;
+  const API_URL = `https://rickandmortyapi.com/api/character/${id}`;
   
  
   useEffect(()=>{
@@ -18,7 +19,6 @@ function App() {
       const data = await response.json();
       setCharacter(
         {
-        id: data.id,
         name:data.name, 
         species:data.species, 
         status:data.status, 
@@ -27,10 +27,9 @@ function App() {
       console.log(data.name, data.species, data.status, data.image, data.type);
     }
     loadData();
-  },[]);
-  function handleClick(id) {
-    id = (Math.floor(Math.random()* 826) + 1)
-    console.log(id)
+  },[id]);
+  function handleClick() {
+    setId ((Math.floor(Math.random()* 826) + 1))
   }
   
 
