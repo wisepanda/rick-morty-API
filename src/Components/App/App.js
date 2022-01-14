@@ -3,26 +3,11 @@ import Header from '../Header/header.js';
 import './App.css';
 import React, { useState, useEffect } from "react";
 
-Access-Control-Allow-origin:`https://localhost:3000`;
-// import express  from 'express';
-// import cors from "cors";
-
-
-// app.use(
-//   cors({
-//     origin: `http://localhost:3000`,
-//   })
-// );
-
-
-
-
-
 
 function App() {
-  const API_URL = `https://superheroapi.com/api/10166230989275387/1`;
+  const API_URL = `https://rickandmortyapi.com/api/character/1`;
 
-  const [hero, setHero] = useState([]);
+  const [character, setCharacter] = useState([]);
 
   useEffect(()=>{
     loadData();
@@ -31,15 +16,10 @@ function App() {
   const loadData = async() =>{
     const response = await fetch(API_URL);
     const data = await response.json();
-    console.log(response.headers)
-    setHero(data)
-    console.log(data)
+
+    setCharacter(data.name, data.species, data.status, data.image, data.type);
+    console.log(data.name, data.species, data.status, data.image, data.type);
   }
-
-
-
-
-
   return (
     <div>
     <div>
