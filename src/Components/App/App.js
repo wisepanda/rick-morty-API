@@ -9,11 +9,13 @@ import "../css/app.css"
 
 function App() {
   const [characters, setCharacters] = useState([]);
-  const [id, setId] = useState(1);
+  const [id, setId] = useState((Math.floor(Math.random()* 826) + 1));
+  //const [charInput, setCharInput] = useState("")
 
  
   
   const API_URL = `https://rickandmortyapi.com/api/character/${id}`;
+ // const API_URL2 = `https://rickandmortyapi.com/api/character/${charInput}`;
 
   
  
@@ -37,13 +39,20 @@ function App() {
       console.log(data);
     }
     loadData();
-  },[id]);
+  },[id, API_URL]);
 
 
 
   function handleClick() {
     setId ((Math.floor(Math.random()* 826) + 1))
   }
+
+  // write a function that takes in a string all lower cases
+  // on click we are searching the api for the name
+  // we need a state 
+
+
+
 
 
   return (
