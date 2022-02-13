@@ -1,0 +1,35 @@
+Api data: 
+/id
+/powerstats
+/biography
+/appearance
+/work
+/connections
+/image
+/search/name
+
+Access token - 10166230989275387
+Api - https://superheroapi.com/api/10166230989275387/1
+
+Information we want: name, image.
+
+1. Draw an image of what our app will look like DONE
+2. Sort files - delete what we dont need DONE
+MVP
+3. Start creating our componenents
+4. Components: 
+(o) Title Component DONE
+    -Create a title that sais"Superheroes of Room 40"
+(i) Create Header Components - Name of the superhero DONE
+    -Needs to show the Name of the superhero from api https://superheroapi.com/api/10166230989275387/{id}
+5. Deploy app
+(ii) Figure - Div - image of superhero DONE
+    -need to show the pic of the hero  https://superheroapi.com/api/10166230989275387/image
+(iii) Superhero stats DONE
+    -needs to show the stats of the hero  https://superheroapi.com/api/10166230989275387/powerstats
+(iv) Button - Gets a random superhero DONE
+    -function that gets a random id from the Api https://superheroapi.com/api/10166230989275387/{id}
+    -random id = id = (Math.floor(Math.random() * 731) + 1)
+Display Api Infos
+
+
