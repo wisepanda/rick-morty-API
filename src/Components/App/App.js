@@ -8,14 +8,16 @@ import "../css/app.css"
 
 
 function App() {
+
+  
   const [characters, setCharacters] = useState([]);
   const [id, setId] = useState((Math.floor(Math.random()* 826) + 1));
-  //const [charInput, setCharInput] = useState("")
+  const [charInput, setCharInput] = useState("")
 
  
   
   const API_URL = `https://rickandmortyapi.com/api/character/${id}`;
- // const API_URL2 = `https://rickandmortyapi.com/api/character/${charInput}`;
+  
 
   
  
@@ -23,8 +25,7 @@ function App() {
     const loadData = async() =>{
       const response = await fetch(API_URL);
       const data = await response.json();
-      setCharacters(
-        {
+      setCharacters({
         id: data.id,
         name:data.name, 
         species:data.species, 
@@ -47,6 +48,13 @@ function App() {
     setId ((Math.floor(Math.random()* 826) + 1))
   }
 
+
+  function handleChange(e){
+   setCharInput(e.target.value);
+   charInput(setCharInput)
+   console.log(charInput)
+  };
+
   // write a function that takes in a string all lower cases
   // on click we are searching the api for the name
   // we need a state 
@@ -59,7 +67,7 @@ function App() {
     <div>
     <div>
       <Title/>
-      <Input />
+      <Input onChange={handleChange}/>
       <button onClick={handleClick}>"Wubbalubbadubdub!"</button>
     </div>
       <Characters characters={characters}/>
@@ -67,6 +75,7 @@ function App() {
      
     </div>
   );
-}
+ }
+
 
 export default App;
