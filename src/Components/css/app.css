@@ -11,3 +11,7 @@ html{
     background-color: rgb(255, 252, 249);
     font-family: Fredericka the Great, sans-serif ; 
   }
+ button{
+   display: flex;
+   align-self: center;
+ }

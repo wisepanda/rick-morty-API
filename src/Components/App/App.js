@@ -67,12 +67,10 @@ function App() {
     <div>
     <div>
       <Title/>
-      <Input onChange={handleChange}/>
-      <button onClick={handleClick}>"Wubbalubbadubdub!"</button>
+      <Characters characters={characters}/>  
+      {/* <Input onChange={handleChange}/> */}
     </div>
-      <Characters characters={characters}/>
-      
-     
+      <button onClick={handleClick}>"Wubbalubbadubdub!"</button>
     </div>
   );
  }
