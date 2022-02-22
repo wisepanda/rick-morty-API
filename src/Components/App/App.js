@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Characters from "../Characters/Characters";
 import Title from '../Title/title.js';
+import Button from "../Button/button";
 import Input from "../Input/Input";
 import "../css/app.css"
 
@@ -9,14 +10,13 @@ import "../css/app.css"
 
 function App() {
 
-  
+  let randomChar= (Math.floor(Math.random()* 826) + 1)
   const [characters, setCharacters] = useState([]);
-  const [id, setId] = useState((Math.floor(Math.random()* 826) + 1));
-  const [charInput, setCharInput] = useState("")
-
- 
+  // const [id, setId] = useState((Math.floor(Math.random()* 826) + 1));
   
-  const API_URL = `https://rickandmortyapi.com/api/character/${id}`;
+  
+  
+  const [API_URL, setAPI_URL] = useState(`https://rickandmortyapi.com/api/character/${randomChar}`);
   
 
   
@@ -25,6 +25,29 @@ function App() {
     const loadData = async() =>{
       const response = await fetch(API_URL);
       const data = await response.json();
+      console.log(data)
+
+      const newData = ""
+
+      if(!data.id){
+
+        let {
+          id, name, species, status, image, type, gender, location, origin
+        } = data.results[0]
+        setCharacters({
+          id: id,
+        name:name, 
+        species:species, 
+        status:status, 
+        image:image, 
+        type:type,
+        gender:gender,
+        location:location.name,
+        origin: origin.name
+        })
+      }
+
+
       setCharacters({
         id: data.id,
         name:data.name, 
@@ -39,38 +62,39 @@ function App() {
       });
       console.log(data);
     }
+
     loadData();
-  },[id, API_URL]);
+  },[API_URL]);
 
 
 
   function handleClick() {
-    setId ((Math.floor(Math.random()* 826) + 1))
+    // setId ((Math.floor(Math.random()* 826) + 1))
+    setAPI_URL(`https://rickandmortyapi.com/api/character/${randomChar}`)
+
   }
 
 
-  function handleChange(e){
-   setCharInput(e.target.value);
-   charInput(setCharInput)
-   console.log(charInput)
-  };
-
-  // write a function that takes in a string all lower cases
-  // on click we are searching the api for the name
-  // we need a state 
 
 
+
+  function onSubmit(text){
+    setAPI_URL(`https://rickandmortyapi.com/api/character/?name=${text}`)
+    // console.log(text)
+  }
 
 
 
   return (
     <div>
-    <div>
-      <Title/>
-      <Characters characters={characters}/>  
-      {/* <Input onChange={handleChange}/> */}
-    </div>
-      <button onClick={handleClick}>"Wubbalubbadubdub!"</button>
+      <div>
+        <Title/>
+        <Characters characters={characters}/>  
+      <Input onSubmit={onSubmit}/>
+      </div>
+      <div>
+        <Button handleClick={handleClick}>"Wubbalubbadubdub!"</Button>
+      </div>
     </div>
   );
  }
