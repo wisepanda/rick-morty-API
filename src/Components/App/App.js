@@ -35,7 +35,7 @@ function App() {
           id, name, species, status, image, type, gender, location, origin
         } = data.results[0]
         setCharacters({
-          id: id,
+        id: id,
         name:name, 
         species:species, 
         status:status, 
