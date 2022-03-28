@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/rick-morty-API/static/css/main.48a15559.css",
-    "main.js": "/rick-morty-API/static/js/main.22a1de3d.js",
+    "main.css": "/rick-morty-API/static/css/main.cd570211.css",
+    "main.js": "/rick-morty-API/static/js/main.2985a0ad.js",
     "static/media/FrederickatheGreat-Regular.ttf": "/rick-morty-API/static/media/FrederickatheGreat-Regular.aa6c877c94f34038a6c9.ttf",
     "index.html": "/rick-morty-API/index.html",
-    "main.48a15559.css.map": "/rick-morty-API/static/css/main.48a15559.css.map",
-    "main.22a1de3d.js.map": "/rick-morty-API/static/js/main.22a1de3d.js.map"
+    "main.cd570211.css.map": "/rick-morty-API/static/css/main.cd570211.css.map",
+    "main.2985a0ad.js.map": "/rick-morty-API/static/js/main.2985a0ad.js.map"
   },
   "entrypoints": [
-    "static/css/main.48a15559.css",
-    "static/js/main.22a1de3d.js"
+    "static/css/main.cd570211.css",
+    "static/js/main.2985a0ad.js"
   ]
 }
